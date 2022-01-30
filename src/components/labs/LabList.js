@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 
 
 export const LabList = () => {
@@ -20,7 +21,9 @@ export const LabList = () => {
             {
                 labs.map(
                     (lab) => {
-                        return <p key={`lab--${lab.id}`}>{lab.name}</p>
+                        return <div key={`lab--${lab.id}`}>
+                          <p className={`lab ${lab.id}`}><Link to={`/labs/${lab.id}`}>{lab.name}</Link></p>
+                          </div>
                     }
                 )
             }
