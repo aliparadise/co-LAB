@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
+import { useHistory } from "react-router-dom"
 
 
 export const LabList = () => {
@@ -15,9 +16,13 @@ export const LabList = () => {
         },
         []
     )
+
+    const history = useHistory()
     
    return (
         <>
+            <h1>LABs</h1>
+
             {
                 labs.map(
                     (lab) => {
@@ -27,6 +32,10 @@ export const LabList = () => {
                     }
                 )
             }
+
+            <div>
+                <button onClick={() => history.push("/lab/create")}>Create A LAB</button>
+            </div>
         </>
     )
 }
