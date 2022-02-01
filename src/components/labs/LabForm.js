@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react"
 import { useHistory } from "react-router-dom"
 
 
+
+
 export const LabForm = () => {
     const [labFacilitators, chooseFacilitators] = useState([])
     const [createLab, updateLab] = useState({
@@ -12,7 +14,7 @@ export const LabForm = () => {
         time: "",
         facilitatorId: ""
     })
-
+    const currentUser = parseInt(localStorage.getItem("colab_customer"))
     const history = useHistory()
 
     const submitLab = (evt) => {
@@ -24,7 +26,8 @@ export const LabForm = () => {
             address: createLab.address,
             date: createLab.date,
             time: createLab.time,
-            facilitatorId: createLab.facilitatorId
+            facilitatorId: createLab.facilitatorId,
+            collaboratorId: currentUser
         }
 
         const fetchOption = {

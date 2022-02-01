@@ -5,6 +5,8 @@ import { useHistory } from "react-router-dom"
 
 export const LabList = () => {
     const [labs, getLabs] = useState([])
+    
+    const currentUser = parseInt(localStorage.getItem("colab_customer"))
 
      useEffect(
         () => {
@@ -16,7 +18,7 @@ export const LabList = () => {
         },
         []
     )
-
+   
     const history = useHistory()
 
     const deleteLab = (id) => 
@@ -43,7 +45,7 @@ export const LabList = () => {
                     (lab) => {
                         return <div key={`lab--${lab.id}`}>
                           <p className={`lab ${lab.id}`}><Link to={`/labs/${lab.id}`}>{lab.name}</Link></p>
-                          <button onClick={() => {deleteLab(lab.id)}}>Delete</button>
+                { lab.collaboratorId === currentUser ? <button className="btn--Delete" onClick={() => {deleteLab(lab.id)}}>Delete</button> : "" }
                           </div>
                     }
                 )
