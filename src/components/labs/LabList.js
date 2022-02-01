@@ -18,8 +18,23 @@ export const LabList = () => {
     )
 
     const history = useHistory()
+
+    const deleteLab = (id) => 
+            fetch(`http://localhost:8088/labs/${id}`, {
+            method: "DELETE"
+            })
+            .then( () => {
+                fetch("http://localhost:8088/labs")
+                .then(res => res.json())
+                .then((data) => {
+                    getLabs(data)
+                })
+        },
+        []
+    )
+
     
-   return (
+   return   (
         <>
             <h1>LABs</h1>
 
@@ -28,6 +43,7 @@ export const LabList = () => {
                     (lab) => {
                         return <div key={`lab--${lab.id}`}>
                           <p className={`lab ${lab.id}`}><Link to={`/labs/${lab.id}`}>{lab.name}</Link></p>
+                          <button onClick={() => {deleteLab(lab.id)}}>Delete</button>
                           </div>
                     }
                 )
