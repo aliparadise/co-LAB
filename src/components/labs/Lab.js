@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 
+
 export const Lab = () => {
     const [ lab, singleLab ] = useState({})
-    const [ facilitator, selectFacilitator] = useState([])
-
+    const [ facilitator, selectFacilitator ] = useState([])
     const { labId } = useParams()
+    
 
     useEffect (
         () => {
@@ -27,6 +28,30 @@ export const Lab = () => {
         }, []
     )
 
+    const updateFacilitator = (changeEvt) => {
+            const newFacilitatorLabObject = {
+                "name": lab.name,
+                "about": lab.about,
+                "address": lab.address,
+                "date": lab.date,
+                "time": lab.time,
+                "facilitatorId": parseInt(changeEvt.target.value),
+                "collaboratorId": parseInt(localStorage.getItem("colab_customer"))
+              }
+
+
+        return fetch(`http://localhost:8088/labs/${labId}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(newFacilitatorLabObject)
+        })
+        .then ( () => {
+            
+        })
+    }
+
     return (
         <>
             <h2>LAB Details</h2>
@@ -38,11 +63,11 @@ export const Lab = () => {
                 <div className="lab__time">{ lab.time }</div>
                 <div className="lab__facilitator">
                     Facilitator will be: { lab.facilitator?.name }</div>
-                    <select id="facilitator">
+                    <select id="facilitator" onChange={ updateFacilitator }>
                         { 
                             facilitator.map(
                                 (facilitator) => {
-                                    return <option key={`facilitator--${facilitator.id}`}>
+                                    return <option value={facilitator.id} key={`facilitator--${facilitator.id}`}>
                                         { facilitator.name }
                                     </option>
                                 }
