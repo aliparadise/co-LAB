@@ -8,6 +8,7 @@ export const Lab = () => {
     const [ facilitator, selectFacilitator ] = useState([])
     const { labId } = useParams()
     const history = useHistory()
+    const currentUser = parseInt(localStorage.getItem("colab_customer"))
 
     useEffect (
         () => {
@@ -65,6 +66,7 @@ export const Lab = () => {
                 <div className="lab__time">{ lab.time }</div>
                 <div className="lab__facilitator">
                     Facilitator will be: { lab.facilitator?.name }</div>
+                    { lab.collaboratorId === currentUser ?
                     <select id="facilitator" onChange={ updateFacilitator }>
                         { 
                             facilitator.map(
@@ -76,7 +78,7 @@ export const Lab = () => {
 
                             )
                         }
-                    </select>
+                    </select> : "" }
             </section>
         </>
     )

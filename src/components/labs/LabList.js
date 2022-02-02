@@ -26,7 +26,7 @@ export const LabList = () => {
             method: "DELETE"
             })
             .then( () => {
-                fetch("http://localhost:8088/labs")
+                fetch("http://localhost:8088/labs?_expand=facilitator")
                 .then(res => res.json())
                 .then((data) => {
                     getLabs(data)
@@ -45,7 +45,7 @@ export const LabList = () => {
                     (lab) => {
                         return <div key={`lab--${lab.id}`}>
                           <p className={`lab ${lab.id}`}><Link to={`/labs/${lab.id}`}>{lab.name}</Link> with {lab.facilitator.name}</p>
-                { lab.collaboratorId === currentUser ? <button className="btn--Delete" onClick={() => {deleteLab(lab.id)}}>Delete</button> : "" }
+                { lab.collaboratorId === currentUser ? <button className="btn--delete" onClick={() => {deleteLab(lab.id)}}>Delete</button> : "" }
                           </div>
                     }
                 )
