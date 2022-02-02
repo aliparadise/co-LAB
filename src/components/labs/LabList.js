@@ -10,7 +10,7 @@ export const LabList = () => {
 
      useEffect(
         () => {
-            fetch("http://localhost:8088/labs")
+            fetch("http://localhost:8088/labs?_expand=facilitator")
                 .then(res => res.json())
                 .then((data) => {
                     getLabs(data)
@@ -44,7 +44,7 @@ export const LabList = () => {
                 labs.map(
                     (lab) => {
                         return <div key={`lab--${lab.id}`}>
-                          <p className={`lab ${lab.id}`}><Link to={`/labs/${lab.id}`}>{lab.name}</Link></p>
+                          <p className={`lab ${lab.id}`}><Link to={`/labs/${lab.id}`}>{lab.name}</Link> with {lab.facilitator.name}</p>
                 { lab.collaboratorId === currentUser ? <button className="btn--Delete" onClick={() => {deleteLab(lab.id)}}>Delete</button> : "" }
                           </div>
                     }

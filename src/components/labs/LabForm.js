@@ -26,7 +26,7 @@ export const LabForm = () => {
             address: createLab.address,
             date: createLab.date,
             time: createLab.time,
-            facilitatorId: createLab.facilitatorId,
+            facilitatorId: parseInt(createLab.facilitatorId),
             collaboratorId: currentUser
         }
 
