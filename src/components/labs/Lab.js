@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
+import { useHistory } from "react-router-dom"
 
 
 export const Lab = () => {
     const [ lab, singleLab ] = useState({})
     const [ facilitator, selectFacilitator ] = useState([])
     const { labId } = useParams()
-    
+    const history = useHistory()
 
     useEffect (
         () => {
@@ -47,7 +48,8 @@ export const Lab = () => {
             },
             body: JSON.stringify(newFacilitatorLabObject)
         })
-        .then ( () => {
+        .then (() => {
+            history.push("/labs")
             
         })
     }
