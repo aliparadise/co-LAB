@@ -62,12 +62,16 @@ export const Register = (props) => {
                            placeholder="Enter your name" required autoFocus />
                 </fieldset>
                 <fieldset>
-                    <label htmlFor="address"> Address </label>
-                    <input onChange={updateCollaborator} type="text" id="address" className="form-control" placeholder="Street address" required />
-                </fieldset>
-                <fieldset>
                     <label htmlFor="email"> Email address </label>
                     <input onChange={updateCollaborator} type="email" id="email" className="form-control" placeholder="Email address" required />
+                </fieldset>
+                <fieldset>
+                    <label htmlFor="about"> About </label>
+                    <input onChange={updateCollaborator} type="text" id="about" className="form-control" placeholder="about you" required />
+                </fieldset>
+                <fieldset>
+                    <label htmlFor="image"> Image </label>
+                    <input onChange={updateCollaborator} type="img" id="image" className="form-control" placeholder="an image of you or your art" required />
                 </fieldset>
                 <fieldset>
                     <button type="submit"> Register </button>
