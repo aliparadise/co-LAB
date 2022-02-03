@@ -15,6 +15,7 @@ export const CoLab = () => (
             <>
               <NavBar />
               <ApplicationViews />
+
             </>
           );
         } else {

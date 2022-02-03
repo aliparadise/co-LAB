@@ -68,6 +68,7 @@ export const Lab = () => {
                     Facilitator will be: { lab.facilitator?.name }</div>
                     { lab.collaboratorId === currentUser ?
                     <select id="facilitator" onChange={ updateFacilitator }>
+                        <option value="0">Select A Facilitator</option>
                         { 
                             facilitator.map(
                                 (facilitator) => {
