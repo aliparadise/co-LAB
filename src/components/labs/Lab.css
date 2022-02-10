@@ -1,0 +1,92 @@
+.createButton {
+    font-family: 'Lato', sans-serif;
+    line-height: 1.5;
+    letter-spacing: 2px;
+    margin-left: 30px;
+    font-size: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: right;
+    background-color: whitesmoke;
+    color: #d46e1b;
+    padding: 5px 20px;
+    display: inline-table;
+    border-radius: 25px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.5);
+}
+
+.btn--delete {
+    font-family: 'Lato', sans-serif;
+    line-height: 1.5;
+    letter-spacing: 2px;
+    margin-left: 30px;
+    font-size: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: right;
+    background-color: whitesmoke;
+    color: #d46e1b;
+    padding: 5px 20px;
+    display: inline-table;
+    border-radius: 25px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.5);
+}
+
+.labDetailLink {
+    text-decoration: none;
+    color: #119cbe;
+    margin-left: 20px;
+    font-size: larger;
+}
+
+.header {
+    font-family: 'Lato', sans-serif;
+    color: #404040;
+    margin-left: 20px;
+    font-size: x-large;
+}
+
+.fieldset {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.form-group {
+    margin-left: 20px;
+}
+
+.submitLabButton {
+    font-family: 'Lato', sans-serif;
+    line-height: 1.5;
+    letter-spacing: 2px;
+    margin-left: 30px;
+    font-size: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: right;
+    background-color: whitesmoke;
+    color: #d46e1b;
+    padding: 5px 20px;
+    display: inline-table;
+    border-radius: 25px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.5);
+}
+
+.lab__name {
+    font-size: 40px;
+}
+
+.container {
+    background-color: #dce8ec;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.5);
+    padding: 20px 20px;
+    margin: 20px;
+}
+
+.labForm__title {
+    margin: 20px;
+}
+
+.lab {
+    margin: 20px; 
+}

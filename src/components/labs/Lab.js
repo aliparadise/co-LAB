@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { useHistory } from "react-router-dom"
+import "./Lab.css"
 
 
 export const Lab = () => {
@@ -57,9 +58,9 @@ export const Lab = () => {
 
     return (
         <>
-            <h2>LAB Details</h2>
+            <h1>LAB Details</h1>
             <section className="lab">
-                <h3 className="lab__name">{ lab.name }</h3>
+                <div className="lab__name">{ lab.name }</div>
                 <div className="lab__about">{ lab.about }</div>
                 <div className="lab__address">{ lab.address }</div>
                 <div className="lab__date">{ lab.date }</div>
