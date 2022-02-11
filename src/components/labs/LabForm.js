@@ -118,9 +118,9 @@ export const LabForm = () => {
                         }
                     }
                     required autoFocus
-                    type="date"
+                    type="text"
                     className="form-control"
-                    placeholder="date for the LAB"
+                    placeholder="ex:  mm.dd.yyyy"
                 />
             </div>
             <div className="form-group">
@@ -134,13 +134,13 @@ export const LabForm = () => {
                         }
                     }
                     required autoFocus
-                    type="time"
+                    type="text"
                     className="form-control"
-                    placeholder="Time of LAB"
+                    placeholder="ex:  6:00PM"
                 />
             </div>
-        </fieldset>
-        <fieldset>
+    
+        
                 <div className="form-group">
                     <label htmlFor="facilitator">Facilitator:</label>
                     <select name="facilitator" className="form-control"
@@ -164,7 +164,7 @@ export const LabForm = () => {
                     </select>
                 </div>
             </fieldset>
-        <button onClick={submitLab} className="btn btn-primary">
+        <button onClick={submitLab} className="submitLabButton">
             Create
         </button>
     </form>  

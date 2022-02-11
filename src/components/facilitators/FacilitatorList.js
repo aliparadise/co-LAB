@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-
+import "./Facilitator.css"
 
 export const FacilitatorList = () => {
     const [facilitators, changeFacilitator] = useState([])
@@ -17,13 +17,16 @@ export const FacilitatorList = () => {
     
    return (
         <>
+        <div className="container">
+            <h2>Facilitators</h2>
             {
                 facilitators.map(
                     (facilitator) => {
-                        return <p key={`facilitator--${facilitator.id}`}>{facilitator.name} : {facilitator.specialty}</p>
+                        return <p className="facilitatorNames" key={`facilitator--${facilitator.id}`}>{facilitator.name} : {facilitator.specialty}</p>
                     }
                 )
             }
+        </div>
         </>
     )
 }

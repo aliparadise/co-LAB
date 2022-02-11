@@ -4,7 +4,12 @@ import "./NavBar.css"
 
 export const NavBar = () => {
     return (
+        <>
+        <header className="header"></header>
         <ul className="navbar">
+        <li className="navbar__item">
+            co-LAB
+            </li>
             <li className="navbar__item">
                 <Link className="navbar__link" to="/facilitators">Facilitators</Link>
             </li>
@@ -25,5 +30,6 @@ export const NavBar = () => {
                 </Link>
             </li>
         </ul>
+        </>
     )
 }

@@ -39,22 +39,22 @@ export const Login = () => {
                     <h1>co-LAB</h1>
                     <h2>Please sign in</h2>
                     <fieldset>
-                        <label htmlFor="inputEmail"> Email address </label>
+                        <label htmlFor="inputEmail" className="emailAddress"> Email address </label>
                         <input type="email"
                             onChange={evt => set(evt.target.value)}
                             className="form-control"
-                            placeholder="Email address"
+                            placeholder=""
                             required autoFocus />
                     </fieldset>
                     <fieldset>
-                        <button type="submit">
+                        <button type="submit" className="signInButton">
                             Sign in
                         </button>
                     </fieldset>
                 </form>
             </section>
             <section className="link--register">
-                <Link to="/register">Not a member yet?</Link>
+                <Link className="registrationLink" to="/register">Not a member yet?</Link>
             </section>
         </main>
     )

@@ -1,21 +1,18 @@
-@import url("https://fonts.googleapis.com/css?family=Comfortaa|Patua+One");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300");
 
 body,
-button,
 input,
 select,
 textarea {
   color: #404040;
-  font-family: "Comfortaa", Arial, sans-serif;
-  font-size: 14px;
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
   line-height: 1.5;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Patua One", serif;
   letter-spacing: 2px;
 }
 
-p {
-  margin-bottom: 1.5em;
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lato', sans-serif;
+  letter-spacing: 3px;
+  margin-left: 20px;
 }

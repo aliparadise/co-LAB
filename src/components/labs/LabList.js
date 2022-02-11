@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import { useHistory } from "react-router-dom"
+import "./Lab.css"
 
 
 export const LabList = () => {
@@ -38,21 +39,22 @@ export const LabList = () => {
     
    return   (
         <>
-            <h1>LABs</h1>
+            <div className="container">
+            <h1 className="header">LABs</h1>
 
             {
                 labs.map(
                     (lab) => {
                         return <div key={`lab--${lab.id}`}>
-                          <p className={`lab ${lab.id}`}><Link to={`/labs/${lab.id}`}>{lab.name}</Link> with {lab.facilitator.name}</p>
+                          <p><Link className="labDetailLink" to={`/labs/${lab.id}`}>{lab.name}</Link> with {lab.facilitator.name}</p>
                 { lab.collaboratorId === currentUser ? <button className="btn--delete" onClick={() => {deleteLab(lab.id)}}>Delete</button> : "" }
                           </div>
                     }
                 )
             }
-
+            </div>
             <div>
-                <button onClick={() => history.push("/lab/create")}>Create A LAB</button>
+                <button className="createButton" onClick={() => history.push("/lab/create")}>Create A LAB</button>
             </div>
         </>
     )

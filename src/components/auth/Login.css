@@ -1,5 +1,15 @@
 .h1, h1 {
     font-size: 2.5rem;
+    color: #d46e1b;
+}
+
+.h2, h2 {
+    font-size: 1.5rem;
+}
+
+.emailAddress {
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
 }
 
 fieldset {
@@ -45,15 +55,6 @@ fieldset {
     text-align: center;
 }
 
-.form--login {
-    background-position-x: right;
-    z-index: 1;
-    min-height: 25rem;
-    min-width: 45rem;
-    background-color: hsla(0,0%,100%,0.40);
-    background-blend-mode: overlay;
-    background-repeat: no-repeat;
-}
 
 .button--close {
     position: relative;
@@ -63,4 +64,28 @@ fieldset {
 .dialog {
     min-width: 15rem;
     min-height: 5rem;
+}
+
+.signInButton {
+    font-family: 'Lato', sans-serif;
+    line-height: 1.5;
+    letter-spacing: 2px;
+    margin-left: 20px;
+    font-size: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: right;
+    background-color: whitesmoke;
+    color: #d46e1b;
+    padding: 5px 20px;
+    display: inline-table;
+    border-radius: 25px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.5);
+}
+
+.registrationLink {
+    text-decoration: none;
+    color: #d46e1b;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
 }
