@@ -32,3 +32,5 @@ Moving on...
 2. Clone the API
 3. Host the API on port 8088 using json-server
 4. Host the project using npm start in the project directory.
+
+User email: demo@demo.com
